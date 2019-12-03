@@ -1,0 +1,15 @@
+﻿  Caelesti Island.cpp
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(116,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(182,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(225,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(267,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(311,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(352,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(428,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(467,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(506,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(553,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(589,3): warning C4551: function call missing argument list
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(600,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\Caelesti Island.cpp(648,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Caelesti Island.vcxproj -> I:\055791s\DMA\Projects\Caelesti Island\Caelesti Island v3\OneDrive_1_11-27-2019\x64\Debug\Caelesti Island.exe
