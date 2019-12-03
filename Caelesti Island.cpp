@@ -21,6 +21,7 @@ void SupplyRoom();
 void WellRoom();
 void RatFight();
 void CrateRoom();
+void InsideWell();
 
 //Varibles
 int health = 20;
@@ -149,16 +150,16 @@ void Inventory() {
 
 
 /*
-while (input != "north", "n", "east", "e", "south", "s","west", "w") {
+while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
 	getline(cin, input);
 	if (input == "north" || input == "n") {
 
 	}
 	if (input == "west" || input == "w") {
-		WestBeach();
+		
 	}
 	if (input == "east" || input == "e") {
-		EastBeach();
+		
 	}
 	if (input == "south" || input == "s") {
 
@@ -603,7 +604,7 @@ void CrateRoom() {
 	Descript CaveEntrance;
 
 	cout << "Crate Room\n";
-	cout << "you stand in front of the open crate. Inside are " << _CrateInventory[1] << " " << _CrateInventory[0] << "\n";
+	cout << "you stand in front of the open crate. Inside are " << _CrateInventory[0] << " " << _CrateInventory[1] << "\n";
 
 	//Exits
 	CaveEntrance.SetNorthExits("rock");
@@ -613,7 +614,6 @@ void CrateRoom() {
 	PrintExits(CaveEntrance);
 
 
-	getline(cin, input);
 	while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
@@ -629,14 +629,14 @@ void CrateRoom() {
 			SupplyRoom();
 		}
 		if (input == "take soup" && _CrateInventory[1] == "soup") {
+			cout << "taken\n";
 			_inventory[2] = "soup";
 			_CrateInventory[1] = "";
-			cout << "taken" << endl;
 		}
 		if (input == "take goggles" && _CrateInventory[0] == "goggles") {
+			cout << "taken" << endl;
 			_inventory[3] = "goggles";
 			_CrateInventory[0] = "";
-			cout << "taken\n";
 		}
 		Actions();
 	}
@@ -653,19 +653,65 @@ void WellRoom() {
 	//Description
 	WellRoom.SetRoomName("Well Room");
 	if (_inventory[3] == "goggles") {
-		WellRoom.SetRoomDescript("There is a well");
+		WellRoom.SetRoomDescript("There is a well in the middle of the room that miners would use but it is very old, there is a ladder leading down");
 	}
-	WellRoom.SetRoomDescript("");
+	else {
+		WellRoom.SetRoomDescript("Very little light is leaching from behind you and you cant make out much");
+	}
 	PrintRoomDescript(WellRoom);
 
 	//Exits
-	WellRoom.SetNorthExits("");
-	WellRoom.SetEastExits("");
-	WellRoom.SetSouthExits("");
-	WellRoom.SetWestExits("");
+	if (_inventory[3] == "goggles") {
+		WellRoom.SetNorthExits("a passage");
+		WellRoom.SetEastExits("low passage");
+		WellRoom.SetSouthExits("dimmly lit passage");
+		WellRoom.SetWestExits("rock");
+	}
 	PrintExits(WellRoom);
-}
 
+	while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
+		getline(cin, input);
+		if (input == "north" || input == "n") {
+
+		}
+		if (input == "west" || input == "w") {
+			
+		}
+		if (input == "east" || input == "e") {
+			
+		}
+		if (input == "south" || input == "s") {
+
+		}
+		if ((input == "go into well" || input == "down well") && _inventory[3] == "gogles") {
+			InsideWell();
+		}
+		Actions();
+	}
+
+}
+void InsideWell() {
+	//Defs.
+	srand(time(NULL));
+	damage = ((rand() % 5) + 2);
+	Descript InsideWell;
+
+	//Description
+	InsideWell.SetRoomName("Cave Entrance");
+	InsideWell.SetRoomDescript("you stand at the bottom of a well that has gone dry. infront of you is an old chest reading \nWhat has a head, a tail, is brown, and has no legs? \nthere is a small keypad under the lock");
+	PrintRoomDescript(InsideWell);
+
+	//Exits
+	InsideWell.SetNorthExits("rocks");
+	InsideWell.SetEastExits("rocks");
+	InsideWell.SetSouthExits("rocks");
+	InsideWell.SetWestExits("rocks");
+	PrintExits(InsideWell);
+
+	while (input != "up" || input != "up well" || input != "climb up" || input != "climb up well") {
+		
+	}
+}
 
 
 
