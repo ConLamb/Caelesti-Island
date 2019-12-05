@@ -191,7 +191,7 @@ int main()
 	cout << "Markeo is an explorer and captain of the \"Thandal Pacidicus\". He has been at sea for the last four months and hasent seen land since he left." << endl;
 	cout << "[Enter]";
 	getline(cin, input);
-	cout << "Today, Markeo was again thinking that the voyage might be pointless and how it would be better to turn back when the ship's boy's voise was carried back to him on the wind" << endl;
+	cout << "Today, Markeo was again thinking that the voyage might be pointless and how it would be better to turn back when the ship's boy's voice was carried back to him on the wind" << endl;
 	cout << "[Enter]";
 	getline(cin, input);
 	cout << "\"Land Ho!!!!\"" << endl;
@@ -241,7 +241,7 @@ void SouthBeach() {
 	PrintExits(SouthBeach);
 
 
-	while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
+	while (input != "north" || "n" || "east" || "e" || "south" || "s" "west" || "w") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
 			CaveClearing();
@@ -313,10 +313,16 @@ void NorthBeach() {
 	//Defs.
 	damage = ((rand() % 5) + 2);
 	Descript NorthBeach;
+	string _NorthBechInventory = "earmuffs";
 
 	//Description
 	NorthBeach.SetRoomName("North Beach");
-	NorthBeach.SetRoomDescript("there is an old crate lying on the beach");
+	if (_NorthBechInventory == "earmuffs") {
+		NorthBeach.SetRoomDescript("there is an old crate lying on the beach, inside are earmuffs");
+	}
+	if (_NorthBechInventory != "earmuffs") {
+		NorthBeach.SetRoomDescript("there is an old crate lying on the beach");
+	}
 	PrintRoomDescript(NorthBeach);
 
 	//Exits
@@ -325,6 +331,7 @@ void NorthBeach() {
 	NorthBeach.SetSouthExits("jungle and a sloping hill");
 	NorthBeach.SetWestExits("water");
 	PrintExits(NorthBeach);
+	cout << "you can go south east and south west just for this room, there is beach in each of those directions\n";
 
 	//Actions
 	while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
@@ -338,8 +345,20 @@ void NorthBeach() {
 		if (input == "south" || input == "s") {
 
 		}
+		if (input == "south east") {
+			EastBeach();
+		}
+		if (input == "south west") {
+			WestBeach();
+		}
 		if (input == "west" || input == "w") {
 			cout << "There is water there" << endl;
+		}
+		if (input == "take earmuffs" && _NorthBechInventory == "earmuffs") {
+			cout << "taken\n";
+			_inventory[4] = "earmuffs";
+			_NorthBechInventory = "";
+
 		}
 		Actions();
 	}
@@ -471,7 +490,12 @@ void CaveEntrance() {
 
 	//Description
 	CaveEntrance.SetRoomName("Cave Entrance");
+	if (_inventory[4] == "earmuffs") {
+		CaveEntrance.SetRoomDescript("There is a small bolder with scratch that read \"here lies the heart of our land\"");
+	}
+	else {
 	CaveEntrance.SetRoomDescript("There is a small bolder with scratch that form a language you do not understand");
+	}
 	PrintRoomDescript(CaveEntrance);
 
 	//Exits
@@ -698,7 +722,7 @@ void InsideWell() {
 
 	//Description
 	InsideWell.SetRoomName("Cave Entrance");
-	InsideWell.SetRoomDescript("you stand at the bottom of a well that has gone dry. infront of you is an old chest reading \nWhat has a head, a tail, is brown, and has no legs? \nthere is a small keypad under the lock");
+	InsideWell.SetRoomDescript("you stand at the bottom of a well that has gone dry. infront of you is an old safe reading \nLOSE the new code, turn OVER for new code\n");
 	PrintRoomDescript(InsideWell);
 
 	//Exits
@@ -709,7 +733,13 @@ void InsideWell() {
 	PrintExits(InsideWell);
 
 	while (input != "up" || input != "up well" || input != "climb up" || input != "climb up well") {
-		
+		getline(cin, input);
+		if (input == "up" || input == "up well" || input == "climb up" || input == "climb up well") {
+			WellRoom();
+		}
+		if (input == "enter 3507" || "3507") {
+			cout << "there is a small his as the safe opens and out falls a chain mail brestplate\n";
+		}
 	}
 }
 
