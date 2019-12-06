@@ -718,6 +718,7 @@ void InsideWell() {
 	//Defs.
 	srand(time(NULL));
 	damage = ((rand() % 5) + 2);
+	string _safeInventory = "hauberk";
 	Descript InsideWell;
 
 	//Description
@@ -738,7 +739,11 @@ void InsideWell() {
 			WellRoom();
 		}
 		if (input == "enter 3507" || "3507") {
-			cout << "there is a small his as the safe opens and out falls a chain mail brestplate\n";
+			cout << "there is a small his as the safe opens and out falls a hauberk\n";
+		}
+		if (input == "take hauberk" && _safeInventory == "hauberk") {
+			cout << "taken\n";
+
 		}
 	}
 }
