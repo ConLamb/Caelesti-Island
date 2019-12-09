@@ -22,10 +22,12 @@ void WellRoom();
 void RatFight();
 void CrateRoom();
 void InsideWell();
+void WestJungle();
 
 //Varibles
 int health = 20;
 int maxhealth = 20;
+int armor = 0;
 int damage;
 int xp = 0;
 string input;
@@ -105,7 +107,15 @@ void Descript::SetWestExits(string exit) {
 	_WestExits = exit;
 }
 void Descript::PrintExits() {
-	cout << "north is " << _NorthExits << ", east is " << _EastExits << ", south is " << _SouthExits << ", west is " << _WestExits << endl;
+	if (_NorthExits != "") {
+		cout << "north is " << _NorthExits;
+	}if (_EastExits != "") {
+		cout << ", east is " << _EastExits;
+	}if (_SouthExits != "") {
+		cout << ", south is " << _SouthExits;
+	}if (_WestExits != "") {
+		cout << ", west is " << _WestExits << endl;
+	}
 }
 void PrintExits(Descript anExit) {
 	anExit.PrintExits();
@@ -122,6 +132,7 @@ void Actions() {
 	if ((input == "use soup" || input == "drink soup" || input == "eat soup") && _inventory[2] == "soup") {
 		souphealth = (souphealth + (rand() % 5));
 		health = souphealth + health;
+		xp = xp + 5;
 		if (health > maxhealth) {
 			health = maxhealth;
 		}
@@ -135,6 +146,8 @@ void Actions() {
 void Inventory() {
 	cout << "health: " << health << endl;
 	cout << "experence points: " << xp << endl;
+	cout << "armor: " << armor << endl;
+	cout << endl;
 	//Items
 	size_t n = sizeof(_inventory) / sizeof(_inventory[0]);
 	for (size_t i = 0; i < n; i++) {
@@ -150,23 +163,21 @@ void Inventory() {
 
 
 /*
-while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
+while (input != "north" && input != "n" && input != "east" && input != "e" && input != "south" && input != "s" && input != "west" && input != "w") {
 	getline(cin, input);
 	if (input == "north" || input == "n") {
-
 	}
 	if (input == "west" || input == "w") {
-		
+
 	}
 	if (input == "east" || input == "e") {
-		
+
 	}
 	if (input == "south" || input == "s") {
 
 	}
-
 }
-	*/
+*/
 
 
 
@@ -225,6 +236,7 @@ int main()
 void SouthBeach() {
 	srand(time(NULL));
 	//Defs.
+	input = "";
 	damage = ((rand() % 5) + 2);
 	Descript SouthBeach;
 
@@ -241,7 +253,7 @@ void SouthBeach() {
 	PrintExits(SouthBeach);
 
 
-	while (input != "north" || "n" || "east" || "e" || "south" || "s" "west" || "w") {
+	while (input != "north" && input != "n" && input != "east" && input != "e" && "west" && input != "w") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
 			CaveClearing();
@@ -262,6 +274,27 @@ void SouthBeach() {
 
 
 
+void WestJungle() {
+	srand(time(NULL));
+	//Defs.
+	input = "";
+	damage = ((rand() % 5) + 2);
+	Descript WestJungle;
+
+	//Description
+	WestJungle.SetRoomName("South Beach");
+	WestJungle.SetRoomDescript("");
+	PrintRoomDescript(WestJungle);
+
+	//Exits
+	WestJungle.SetNorthExits("");
+	WestJungle.SetEastExits("");
+	WestJungle.SetSouthExits("");
+	WestJungle.SetWestExits("");
+	PrintExits(WestJungle);
+}
+
+
 
 
 void CaveClearing() {
@@ -269,6 +302,7 @@ void CaveClearing() {
 	//Defs.
 	damage = ((rand() % 5) + 2);
 	Descript CaveClearing;
+	input = "";
 
 	//Description
 	CaveClearing.SetRoomName("Cave Clearing");
@@ -281,11 +315,7 @@ void CaveClearing() {
 	CaveClearing.SetWestExits("jungle");
 	PrintExits(CaveClearing);
 
-
-
-
-
-	while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
+	while (input != "north" && input != "n" && input != "east" && input != "e" && input != "south" && input != "s" && input != "west" && input != "w") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
 			CaveEntrance();
@@ -311,6 +341,7 @@ void CaveClearing() {
 void NorthBeach() {
 	srand(time(NULL));
 	//Defs.
+	input = "";
 	damage = ((rand() % 5) + 2);
 	Descript NorthBeach;
 	string _NorthBechInventory = "earmuffs";
@@ -334,7 +365,7 @@ void NorthBeach() {
 	cout << "you can go south east and south west just for this room, there is beach in each of those directions\n";
 
 	//Actions
-	while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
+	while (input != "south" && input != "s" && input != "south east" && input != "south west") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
 			cout << "there is water there" << endl;
@@ -369,6 +400,7 @@ void NorthBeach() {
 
 void EastBeach() {
 	//Defs.
+	input = "";
 	srand(time(NULL));
 	damage = ((rand() % 5) + 2);
 	Descript EastBeach;
@@ -388,7 +420,7 @@ void EastBeach() {
 
 
 
-	while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
+	while (input != "north" && input != "n" && "west" && input != "w" && input != "climb tree" && input != "climb palm tree") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
 			NorthBeach();
@@ -402,14 +434,14 @@ void EastBeach() {
 		if (input == "south" || input == "s") {
 			cout << "There is water there" << endl;
 		}
-		if (input == "climb tree") {
+		if (input == "climb tree" || input == "climb palm tree") {
 			UpPalmTree();
 		}
 		Actions();
 	}
 }
 void UpPalmTree() {
-
+	input = "";
 
 	cout << "Up Palm tree\n";
 	cout << "there are few branches and after finding the best branch you manage to pull your self up and into the tree" << endl;
@@ -418,22 +450,25 @@ void UpPalmTree() {
 	}
 
 
-	while (input != "climb down", "down") {
+	while (input != "climb down" && input != "down") {
 		getline(cin, input);
 		Actions();
 		if (input == "climb down" || input == "down") {
 			EastBeach();
 		}
-		if (input == "open coconut" || input == "take coconut" && _Coconutinventory == "dagger") {
+		if ((input == "open coconut" || input == "take coconut") && _Coconutinventory == "dagger") {
 			cout << "you take the coconut and manage to wedge your fingers in the seem and it fall open in your lap\n";
 			cout << "inside is a black, shiny dagger with a jewl incrusted hilt\n";
-			getline(cin, input);
-			Actions();
-			if (input == "take dagger") {
-				_inventory[1] = "dagger";
-				_Coconutinventory = "";
-				cout << "taken\n";
+			while (input != "take dagger") {
+				getline(cin, input);
+				Actions();
+				if (input == "take dagger") {
+					_inventory[1] = "dagger";
+					_Coconutinventory = "";
+					cout << "taken\n";
+				}
 			}
+			
 		}
 	}
 }
@@ -448,6 +483,7 @@ void WestBeach() {
 	srand(time(NULL));
 	damage = ((rand() % 5) + 2);
 	Descript WestBeach;
+	input = "";
 
 	//Description
 	WestBeach.SetRoomName("West Beach");
@@ -462,7 +498,7 @@ void WestBeach() {
 	PrintExits(WestBeach);
 
 	//Actions
-	while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
+	while (input != "north" && input != "n" && input != "east" && input != "e") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
 			NorthBeach();
@@ -487,6 +523,7 @@ void CaveEntrance() {
 	srand(time(NULL));
 	damage = ((rand() % 5) + 2);
 	Descript CaveEntrance;
+	input = "";
 
 	//Description
 	CaveEntrance.SetRoomName("Cave Entrance");
@@ -494,7 +531,7 @@ void CaveEntrance() {
 		CaveEntrance.SetRoomDescript("There is a small bolder with scratch that read \"here lies the heart of our land\"");
 	}
 	else {
-	CaveEntrance.SetRoomDescript("There is a small bolder with scratch that form a language you do not understand");
+		CaveEntrance.SetRoomDescript("There is a small bolder with scratch that form a language you do not understand");
 	}
 	PrintRoomDescript(CaveEntrance);
 
@@ -506,7 +543,7 @@ void CaveEntrance() {
 	PrintExits(CaveEntrance);
 
 
-	while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
+	while (input != "north" && input != "n" && input != "east" && input != "e" && input != "south" && input != "s") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
 			WellRoom();
@@ -531,6 +568,7 @@ void SupplyRoom() {
 	srand(time(NULL));
 	damage = ((rand() % 5) + 2);
 	Descript SupplyRoom;
+	input = "";
 
 	//Description
 	SupplyRoom.SetRoomName("Supply Room");
@@ -551,7 +589,7 @@ void SupplyRoom() {
 	PrintExits(SupplyRoom);
 
 	//Actions
-	while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
+	while (input != "north" && input != "n" && input != "south" && input != "s") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
 			if (RatHealth <= 0) {
@@ -579,6 +617,7 @@ void RatFight() {
 	damage = ((rand() % 5) + 8);
 	DaggerDamage = 15 + (rand() % 11);
 	RatDamage = 2 + (rand() % 5);
+	
 
 
 	if (input == "fight rat" && RatHealth > 0) {
@@ -601,6 +640,7 @@ void RatFight() {
 	}
 	if (RatHealth <= 0) {
 		cout << "the rat is dead\n";
+		xp = xp + 20;
 	}
 	if (health <= 0) {
 		cout << "you died\n";
@@ -617,7 +657,7 @@ void RatFight() {
 	if (RatHealth > 0 && health > 0) {
 		cout << "the rat takes a bite at you" << endl;
 		cout << "you take " << RatDamage << " damage\n";
-		health = health - RatDamage;
+		health = health - (RatDamage - armor);
 	}
 }
 void CrateRoom() {
@@ -626,6 +666,7 @@ void CrateRoom() {
 	srand(time(NULL));
 	damage = ((rand() % 5) + 2);
 	Descript CaveEntrance;
+	input = "";
 
 	cout << "Crate Room\n";
 	cout << "you stand in front of the open crate. Inside are " << _CrateInventory[0] << " " << _CrateInventory[1] << "\n";
@@ -638,7 +679,7 @@ void CrateRoom() {
 	PrintExits(CaveEntrance);
 
 
-	while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
+	while (input != "north" && input != "n" && input != "east" && input != "e" && input != "south" && input != "s" && input != "west" && input != "w") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
 			cout << "there is rock there\n";
@@ -673,6 +714,7 @@ void WellRoom() {
 	srand(time(NULL));
 	damage = ((rand() % 5) + 2);
 	Descript WellRoom;
+	input = "";
 
 	//Description
 	WellRoom.SetRoomName("Well Room");
@@ -693,21 +735,21 @@ void WellRoom() {
 	}
 	PrintExits(WellRoom);
 
-	while (input != "north", "n", "east", "e", "south", "s", "west", "w") {
+	while (input != "north" && input != "n" && input != "east" && input != "e" && input != "south" && input != "s" && input != "west" && input != "w") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
 
 		}
 		if (input == "west" || input == "w") {
-			
+
 		}
 		if (input == "east" || input == "e") {
-			
+
 		}
 		if (input == "south" || input == "s") {
 
 		}
-		if ((input == "go into well" || input == "down well") && _inventory[3] == "gogles") {
+		if ((input == "go into well" || input == "down well") && _inventory[3] == "goggles") {
 			InsideWell();
 		}
 		Actions();
@@ -720,9 +762,10 @@ void InsideWell() {
 	damage = ((rand() % 5) + 2);
 	string _safeInventory = "hauberk";
 	Descript InsideWell;
+	input = "";
 
 	//Description
-	InsideWell.SetRoomName("Cave Entrance");
+	InsideWell.SetRoomName("Inside well");
 	InsideWell.SetRoomDescript("you stand at the bottom of a well that has gone dry. infront of you is an old safe reading \nLOSE the new code, turn OVER for new code\n");
 	PrintRoomDescript(InsideWell);
 
@@ -734,25 +777,24 @@ void InsideWell() {
 	PrintExits(InsideWell);
 
 	while (input != "up" || input != "up well" || input != "climb up" || input != "climb up well") {
+		input = "";
 		getline(cin, input);
 		if (input == "up" || input == "up well" || input == "climb up" || input == "climb up well") {
 			WellRoom();
 		}
 		if (input == "enter 3507" || "3507") {
-			cout << "there is a small his as the safe opens and out falls a hauberk\n";
+			if (_safeInventory == "hauberk") {
+				cout << "there is a small his as the safe opens and out falls a hauberk\n";
+			}
+			else {
+				cout << "the safe is empty\n";
+			}
 		}
 		if (input == "take hauberk" && _safeInventory == "hauberk") {
 			cout << "taken\n";
-
+			_safeInventory = "";
+			_inventory[4] = "hauberk";
+			armor = armor + 2;
 		}
 	}
 }
-
-
-
-
-
-
-
-//What has a head, a tail, is brown, and has no legs?
-//penny
