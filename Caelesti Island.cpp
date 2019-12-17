@@ -7,8 +7,10 @@
 #include <thread>
 #include <chrono>
 #include <ctime>
-#include <vector>
 #include <map>
+#include <vector>
+#include <ctime>
+#include <omp.h>
 using namespace std;
 
 void Inventory();
@@ -31,9 +33,10 @@ void NorthEastBeach();
 void EastJungle();
 void StorageRoom();
 void Dungeon();
-void TrollRoom();
+//void TrollRoom();
 void Bluff();
 void MainStreet();
+
 
 
 //Varibles
@@ -51,10 +54,10 @@ string _Coconutinventory = "dagger";
 int souphealth = 5;
 string _CrateInventory[3] = { "goggles", "soup", "hammer" };
 bool safelock = true;
-map<string, string> north{"north", "n"};
 int perception = 3;
 int check;
 int i = 1;
+string _mainstreetinventory = "keys";
 
 
 
@@ -328,7 +331,7 @@ void WestJungle() {
 	Descript WestJungle;
 
 	//Description
-	WestJungle.SetRoomName("South Beach");
+	WestJungle.SetRoomName("West Jungle");
 	WestJungle.SetRoomDescript("You are is a small parting in the trees");
 	PrintRoomDescript(WestJungle);
 
@@ -346,7 +349,7 @@ void WestJungle() {
 			NorthBeach();
 		}
 		if (input == "west" || input == "w") {
-
+			NorthWestBeach();
 		}
 		if (input == "east" || input == "e") {
 			CaveClearing();
@@ -508,10 +511,10 @@ void CaveClearing() {
 			CaveEntrance();
 		}
 		if (input == "west" || input == "w") {
-
+			WestJungle();
 		}
 		if (input == "east" || input == "e") {
-
+			EastJungle();
 		}
 		if (input == "south" || input == "s") {
 			SouthBeach();
@@ -561,7 +564,7 @@ void NorthBeach() {
 			cout << "there is water there" << endl;
 		}
 		if (input == "south" || input == "s") {
-
+			Bluff();
 		}
 		if (input == "south east") {
 			NorthEastBeach();
@@ -770,9 +773,9 @@ void MainStreet() {
 
 	//Exits
 	MainStreet.SetNorthExits("sheer cliffs");
-	MainStreet.SetEastExits("tepis");
+	MainStreet.SetEastExits("tipis");
 	MainStreet.SetSouthExits("the main street");
-	MainStreet.SetWestExits("tepis");
+	MainStreet.SetWestExits("tipis");
 	PrintExits(MainStreet);
 
 
@@ -791,8 +794,11 @@ void MainStreet() {
 		if (input == "south" || input == "s") {
 
 		}
-		if (input == "take keys" && keyvision == true) {
+		if (input == "take keys" && keyvision == true && _mainstreetinventory == "keys") {
 			cout << "taken\n";
+			_inventory[i] = "keys";
+			_mainstreetinventory = "";
+			i++;
 		}
 		Actions();
 	}
@@ -1144,6 +1150,9 @@ void Dungeon() {
 
 
 
-//void TrollRoom() {
 
-//}
+
+
+
+
+
