@@ -146,6 +146,43 @@ void PrintExits(Descript anExit) {
 
 
 
+class Fight {
+public:
+	void Battle();
+	void SetEnemyHealth(int health);
+	void SetEnemydamage(int damage);
+	void SetEnemyDamageModifier(int damagemod);
+	void SetDamageType(string damagetype);
+	void SetCreatureName(string Name);
+private:
+	int EnemyHealth;
+	int EnemyDamage;
+	int EnemyMod;
+	string Damage_Type;
+	string CreatureName;
+};
+void Fight::SetEnemyHealth(int health) {
+	EnemyHealth = health;
+}
+void Fight::SetEnemydamage(int damage) {
+	EnemyDamage = damage;
+}
+void Fight::SetEnemyDamageModifier(int damagemod) {
+	EnemyMod = damagemod;
+}
+void Fight::SetDamageType(string damagetype) {
+	Damage_Type = damagetype;
+}
+void Fight::SetCreatureName(string name) {
+	CreatureName = name;
+}
+void Fight::Battle(){
+	getline(cin, input);
+
+	cout << "the " << CreatureName << " attacks you\n";
+
+}
+
 
 
 
@@ -1120,7 +1157,7 @@ void StorageRoom() {
 	while (input != "north" && input != "n" && input != "east" && input != "e" && input != "south" && input != "s" && input != "west" && input != "w") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
-			//TrollRoom();
+			TrollRoom();
 		}
 		if (input == "west" || input == "w") {
 
@@ -1149,10 +1186,6 @@ void Dungeon() {
 
 
 
+void TrollRoom() {
 
-
-
-
-
-
-
+}
