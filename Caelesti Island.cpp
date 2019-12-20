@@ -58,6 +58,7 @@ int perception = 3;
 int check;
 int i = 1;
 string _mainstreetinventory = "keys";
+auto keyvision = false;
 
 
 
@@ -232,32 +233,25 @@ void Inventory() {
 	input = "";
 	damage = ((rand() % 5) + 2);
 	Descript anRoom;
-
 	//Description
 	anRoom.SetRoomName("Room Name");
 	anRoom.SetRoomDescript("Room description");
 	PrintRoomDescript(anRoom);
-
 	//Exits
 	anRoom.SetNorthExits("-north");
 	anRoom.SetEastExits("-east");
 	anRoom.SetSouthExits("-south");
 	anRoom.SetWestExits("-west");
 	PrintExits(anRoom);
-
 while (input != "north" && input != "n" && input != "east" && input != "e" && input != "south" && input != "s" && input != "west" && input != "w") {
 	getline(cin, input);
 	if (input == "north" || input == "n") {
-
 	}
 	if (input == "west" || input == "w") {
-
 	}
 	if (input == "east" || input == "e") {
-
 	}
 	if (input == "south" || input == "s") {
-
 	}
 	Actions();
 }
@@ -795,10 +789,9 @@ void MainStreet() {
 	int keysdc = 15;
 	check = ((rand() % 21 + 1) + perception);
 	Descript MainStreet;
-	auto keyvision = false;
 
 	//Description
-	if (check >= keysdc) {
+	if (check >= keysdc && _mainstreetinventory == "keys") {
 		MainStreet.SetRoomName("you are at the end of th village. there is a set of keys on the ground");
 		keyvision = true;
 	}
@@ -817,10 +810,10 @@ void MainStreet() {
 
 
 	//Actions
-	while (input != "north" && input != "n" && input != "east" && input != "e" && input != "south" && input != "s" && input != "west" && input != "w") {
+	while (input != "east" && input != "e" && input != "south" && input != "s" && input != "west" && input != "w") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
-
+            cout << "there is a cliff there\n";
 		}
 		if (input == "west" || input == "w") {
 
@@ -829,7 +822,7 @@ void MainStreet() {
 
 		}
 		if (input == "south" || input == "s") {
-
+            MainStreet();
 		}
 		if (input == "take keys" && keyvision == true && _mainstreetinventory == "keys") {
 			cout << "taken\n";
@@ -1157,7 +1150,7 @@ void StorageRoom() {
 	while (input != "north" && input != "n" && input != "east" && input != "e" && input != "south" && input != "s" && input != "west" && input != "w") {
 		getline(cin, input);
 		if (input == "north" || input == "n") {
-			TrollRoom();
+			//TrollRoom();
 		}
 		if (input == "west" || input == "w") {
 
@@ -1186,6 +1179,5 @@ void Dungeon() {
 
 
 
-void TrollRoom() {
+//void TrollRoom() {
 
-}
