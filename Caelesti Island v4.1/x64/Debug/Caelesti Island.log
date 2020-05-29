@@ -1,0 +1,40 @@
+﻿  Civilization.cpp
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(40,2): warning C4091: 'extern ': ignored on left of 'Einventory' when no variable is declared
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(280,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(355,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Civilization.cpp(22,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Civilization.cpp(106,9): error C2065: 'GoblinHealth': undeclared identifier
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Civilization.cpp(106,55): error C2678: binary '>': no operator found which takes a left-hand operand of type 'EnemyHealth' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\thread(225,24): message : could be 'bool std::operator >(std::thread::id,std::thread::id) noexcept'
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Civilization.cpp(106,55): message : while trying to match the argument list '(EnemyHealth, int)'
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Civilization.cpp(106,77): error C2678: binary '>': no operator found which takes a left-hand operand of type 'EnemyHealth' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\thread(225,24): message : could be 'bool std::operator >(std::thread::id,std::thread::id) noexcept'
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Civilization.cpp(106,77): message : while trying to match the argument list '(EnemyHealth, int)'
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Civilization.cpp(106,100): error C2678: binary '>': no operator found which takes a left-hand operand of type 'EnemyHealth' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\thread(225,24): message : could be 'bool std::operator >(std::thread::id,std::thread::id) noexcept'
+  Cliff.cpp
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Civilization.cpp(106,100): message : while trying to match the argument list '(EnemyHealth, int)'
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(40,2): warning C4091: 'extern ': ignored on left of 'Einventory' when no variable is declared
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(280,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(355,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Cliff.cpp(20,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  GameData.cpp
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Cliff.cpp(60,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(40,2): warning C4091: 'extern ': ignored on left of 'Einventory' when no variable is declared
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(280,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(355,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.cpp(51,43): error C2059: syntax error: 'constant'
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.cpp(51,48): error C2143: syntax error: missing ';' before '}'
+  Jungle.cpp
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.cpp(51,48): error C2059: syntax error: '}'
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(40,2): warning C4091: 'extern ': ignored on left of 'Einventory' when no variable is declared
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(280,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(355,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Jungle.cpp(21,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Jungle.cpp(62,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  UniversalFunctions.cpp
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\Jungle.cpp(106,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(40,2): warning C4091: 'extern ': ignored on left of 'Einventory' when no variable is declared
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(280,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+C:\Users\055791s\OneDrive - School District 44\Grade 9\DMA\Caelesti Island Project\Caelesti Island v4.1\GameData.h(355,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
